@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
     printResults()
 }
 
-private val sortedGarments = mutableListOf<Garment>()
+private val garments = mutableListOf<Garment>()
 private val results = mutableListOf<Pair<Int, Int>>()
 
 private fun parseFile() {
@@ -18,7 +18,7 @@ private fun parseFile() {
     val garmentIncompatibilities = lines.filter { line -> line.startsWith('e') }.map { line -> line.split(" ") }
     val washTimes = lines.filter { line -> line.startsWith('n') }.map { line -> line.split(" ") }
 
-    val garments = mutableListOf<Garment>()
+    val garmentList = mutableListOf<Garment>()
 
     for (washTime in washTimes) {
         val id = washTime[1].toInt()
@@ -27,14 +27,14 @@ private fun parseFile() {
             garmentIncompatibilities.filter { list -> list[1] == washTime[1] }.map { item -> item[2].toInt() }
 
         val garment = Garment(id, time, incompatibilities)
-        garments.add(garment)
+        garmentList.add(garment)
     }
-    sortedGarments.addAll(garments.sortedBy { it.washTime })
+    garments.addAll(garmentList)
 }
 
 private fun process() {
     var n = 1
-    for (garment in sortedGarments) {
+    for (garment in garments) {
         if (!isInResults(garment.id)) {
             results.addAll(getPairs(garment.id, n))
             n++
@@ -46,8 +46,8 @@ private fun getPairs(garmentId: Int, washId: Int): List<Pair<Int, Int>> {
     val result = mutableListOf<Pair<Int, Int>>()
     val list = mutableListOf<Garment>()
 
-    list.addAll(sortedGarments.filter { it.id == garmentId })
-    for (garment in sortedGarments) {
+    list.addAll(garments.filter { it.id == garmentId })
+    for (garment in garments) {
         if (!isInResults(garment.id)) {
             if (!list.map { it.isCompatible(garment.id) }.any { !it }) {
                 result.add(Pair(garment.id, washId))
