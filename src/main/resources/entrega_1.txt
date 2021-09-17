@@ -1,0 +1,18 @@
+# Impresion inicial del problema
+    La idea del problema la comprendi de entrada, aunque igualmente tuve que releer varias veces el enunciado para
+    entender el formato del archivo del problema.
+
+# Ideas de resolucion
+
+# Comentarios por commit
+
+    - commit 9efd0a234c63052b4fd659fc8149f1e81a04a3f5
+        De entrada ordene la lista de prendas obtenida del archivo, en orden ascendente por tiempo de lavado para ver
+        que resultado me arrojaba. Como no fue tan bueno, revise el enunciado y resulta que me habia olvidado el
+        comentario de que el tiempo de cada lavado es el tiempo que lleva lavar la prenda más sucia de ese lavado.
+
+    - commit a442d7cf0b3086341deae1ab84b8c08a29f2222a
+        Saque el ordenamiento de la lista de prendas por tiempo de lavado y obtuve un resultado mucho mejor que en el
+        primer commit.
+
+# Comentarios finales
