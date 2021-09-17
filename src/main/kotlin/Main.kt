@@ -36,21 +36,21 @@ private fun process() {
     var n = 1
     for (garment in sortedGarments) {
         if (!isInResults(garment.id)) {
-            results.addAll(getPairs(n, garment.id))
+            results.addAll(getPairs(garment.id, n))
             n++
         }
     }
 }
 
-private fun getPairs(washId: Int, garmentId: Int): List<Pair<Int, Int>> {
+private fun getPairs(garmentId: Int, washId: Int): List<Pair<Int, Int>> {
     val result = mutableListOf<Pair<Int, Int>>()
     val list = mutableListOf<Garment>()
 
     list.addAll(sortedGarments.filter { it.id == garmentId })
     for (garment in sortedGarments) {
         if (!isInResults(garment.id)) {
-            if (!list.map { it.isCompatible(garment.id) }.any { !it }) { //&& !list.contains(garment)
-                result.add(Pair(washId, garment.id))
+            if (!list.map { it.isCompatible(garment.id) }.any { !it }) {
+                result.add(Pair(garment.id, washId))
                 list.add(garment)
             }
         }
@@ -61,7 +61,7 @@ private fun getPairs(washId: Int, garmentId: Int): List<Pair<Int, Int>> {
 
 private fun isInResults(garmentId: Int): Boolean {
     for (result in results) {
-        if (result.second == garmentId) {
+        if (result.first == garmentId) {
             return true
         }
     }
