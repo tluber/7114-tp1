@@ -1,18 +1,32 @@
-# Impresion inicial del problema
-    La idea del problema la comprendi de entrada, aunque igualmente tuve que releer varias veces el enunciado para
+# Impresión inicial del problema
+    La idea del problema la comprendí de entrada, aunque igualmente tuve que releer varias veces el enunciado para
     entender el formato del archivo del problema.
 
-# Ideas de resolucion
+# Ideas de resolución
+    Más allá del parseo de los datos, la idea para resolver el problema es primero pulir la información que se obtuvo
+    del archivo y generar una lista de prendas, donde cada prenda tiene un ID, tiempo de lavado y una lista de
+    incompatibilidades. Con los datos ya organizados, se procesa la lista de prendas y se arman los lavados, donde
+    para cada prenda se obtienen las prendas compatibles para lavarse y a su vez se verifica que las prendas a agregarse
+    no estén ya en otros lavados.
 
 # Comentarios por commit
 
     - commit 9efd0a234c63052b4fd659fc8149f1e81a04a3f5
-        De entrada ordene la lista de prendas obtenida del archivo, en orden ascendente por tiempo de lavado para ver
-        que resultado me arrojaba. Como no fue tan bueno, revise el enunciado y resulta que me habia olvidado el
+        De entrada ordené la lista de prendas obtenida del archivo, en orden ascendente por tiempo de lavado para ver
+        que resultado me arrojaba. Como no fue tan bueno, revise el enunciado y resulta que me había olvidado el
         comentario de que el tiempo de cada lavado es el tiempo que lleva lavar la prenda más sucia de ese lavado.
 
     - commit a442d7cf0b3086341deae1ab84b8c08a29f2222a
         Saque el ordenamiento de la lista de prendas por tiempo de lavado y obtuve un resultado mucho mejor que en el
         primer commit.
 
+    - commit 16e6890acf304f717bd2dd98592dec6719333e88
+        Ordene la lista de prendas en orden descendente por tiempo de lavado, pero obtuve un resultado peor que sin
+        ordenar. La idea fue agrupar primero las prendas con mayor tiempo de lavado, pero esto causo que se hagan más
+        lavados que antes.
+
 # Comentarios finales
+    Me parece que llegue a un resultado razonable y además no se me ocurren otras maneras de mejorar la solución. La
+    idea desde un primer momento fue ordenar la lista de prendas por orden de tiempo de lavado, pero en los resultados
+    se veía que se generaban más lavados. Por esta razón, el objetivo del problema debería ser minimizar la cantidad
+    de lavados.

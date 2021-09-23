@@ -29,7 +29,7 @@ private fun parseFile() {
         val garment = Garment(id, time, incompatibilities)
         garmentList.add(garment)
     }
-    garments.addAll(garmentList.sortedByDescending { it.washTime })
+    garments.addAll(garmentList)
 }
 
 private fun process() {
@@ -70,9 +70,7 @@ private fun isInResults(garmentId: Int): Boolean {
 
 private fun printResults() {
     val fileName = "src/main/resources/results.txt"
-
     val file = File(fileName)
-
     val isFileCreated: Boolean = file.createNewFile()
 
     if (isFileCreated) {
@@ -81,13 +79,14 @@ private fun printResults() {
                 out.writeLn("${it.first} ${it.second}")
             }
         }
+        println("Results.txt generated successfully.")
     } else {
         println("Results.txt already exists.")
     }
 }
 
-data class Comment(val line: String)
-data class Problem(val comment: Comment, val garments: Int, val incompatibilities: Int)
+//data class Comment(val line: String)
+//data class Problem(val comment: Comment, val garments: Int, val incompatibilities: Int)
 data class Garment(val id: Int, val washTime: Int, val incompatibilities: List<Int>) {
 
     fun isCompatible(id: Int): Boolean {
