@@ -29,7 +29,7 @@ private fun parseFile() {
         val garment = Garment(id, time, incompatibilities)
         garmentList.add(garment)
     }
-    garments.addAll(garmentList.sortedBy { it.washTime })
+    garments.addAll(garmentList.sortedByDescending { it.washTime })
 }
 
 private fun process() {
@@ -49,7 +49,8 @@ private fun getPairs(garmentId: Int, washId: Int): List<Pair<Int, Int>> {
     list.addAll(garments.filter { it.id == garmentId })
     for (garment in garments) {
         if (!isInResults(garment.id)) {
-            if (!list.map { it.isCompatible(garment.id) }.any { !it }) {
+            if (!list.map { it.isCompatible(garment.id) }.any { !it } && !list.map { garment.isCompatible(it.id) }
+                    .any { !it }) {
                 result.add(Pair(garment.id, washId))
                 list.add(garment)
             }
