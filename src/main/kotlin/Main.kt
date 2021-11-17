@@ -10,6 +10,7 @@ fun main(args: Array<String>) {
 
 private val garments = mutableListOf<Garment>()
 private val results = mutableListOf<Pair<Int, Int>>()
+private val washTimes = mutableListOf<Int>()
 
 private fun parseFile() {
     val fileRoute = "src/main/resources/problem_2"
@@ -29,7 +30,7 @@ private fun parseFile() {
         val garment = Garment(id, time, incompatibilities)
         garmentList.add(garment)
     }
-    garments.addAll(garmentList.sortedWith(compareBy<Garment> { it.washTime }.thenBy { it.incompatibilities.size }).reversed())
+    garments.addAll(garmentList.sortedByDescending { it.washTime })
 }
 
 private fun process() {
@@ -57,6 +58,9 @@ private fun getPairs(garmentId: Int, washId: Int): List<Pair<Int, Int>> {
         }
     }
 
+    // stores the biggest value in the washing
+    washTimes.add(list.maxOf { it.washTime })
+
     return result
 }
 
@@ -81,6 +85,7 @@ private fun printResults() {
             }
         }
         println("Results.txt generated successfully.")
+        println("Total wash time: ${washTimes.sum()}")
     } else {
         println("Results.txt already exists.")
     }
