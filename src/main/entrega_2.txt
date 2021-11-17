@@ -3,5 +3,13 @@
 
 # Comentarios por commit
 
+    - commit 35e00e474f11feff7712ec367afc0fc14340ffd3
+        Resolví el problema utilizando el mismo código de la entrega 1 y obtuve un pésimo resultado.
+
+    - commit e89c1cf7d75a3e612a9ff96c8a2e17774141b630
+        Me di cuenta de un bug que había con respecto a la incompatibilidad de las prendas. Hay algunos pares de
+        prendas en las que la incompatibilidad no es mutua, por ejemplo la prenda 1 es incompatible con la prenda 147
+        pero la prenda 147 si es compatible con la 1. Por otro lado, ordene la lista de prendas en orden descendente
+        por tiempo de lavado, esto hizo que se mejorara muchísimo el tiempo total.
 
 # Comentarios finales

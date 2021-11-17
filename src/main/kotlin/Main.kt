@@ -29,7 +29,7 @@ private fun parseFile() {
         val garment = Garment(id, time, incompatibilities)
         garmentList.add(garment)
     }
-    garments.addAll(garmentList.sortedByDescending { it.washTime })
+    garments.addAll(garmentList.sortedWith(compareBy<Garment> { it.washTime }.thenBy { it.incompatibilities.size }).reversed())
 }
 
 private fun process() {
