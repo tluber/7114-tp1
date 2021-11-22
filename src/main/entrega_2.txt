@@ -1,5 +1,13 @@
 # Ideas de resolución
-
+    La primer idea, a priori, fue la de seguir la misma linea que en el problema 1, aunque viendo que la entrada de
+    datos es muchisimo mas grande, es muy posible que haya que aplicar algun tipo de algoritmo en especial.
+    Como no obtuve buenos resultados en las variantes que probe, se me ocurrio la posibilidad de plantear el problema
+    con un modelo de programacion lineal utilizando alguno de los softwares que usamos en la materia, pero viendo la
+    cantidad ENORME de variables que se generan, descarte esta opcion.
+    Despues de quemarme la cabeza y buscar en internet opciones viables, se me presento la idea de plantear el problema
+    utilizando grafos y el problema del clique. La idea entonces seria armar un grafo de las prendas compatibles entre
+    si (utilizando como peso el tiempo de lavado) y obtener el clique de peso maximo. Para esto, encontre una libreria
+    de Java (jgrapht) que maneja estos tipos de estructura de datos y algoritmos de teoria de grafos.
 
 # Comentarios por commit
 
@@ -13,3 +21,6 @@
         por tiempo de lavado, esto hizo que se mejorara muchísimo el tiempo total.
 
 # Comentarios finales
+    Si bien pude mejorar mi solucion, no cabe duda de que no es la mejor viendo la tabla de rankings. Esta claro que
+    se puede mejorar mucho mas. Como la ultima idea se me ocurrio casi sobre la fecha de entrega del tp, no llego a
+    aplicarla, pero creo que esta bien encaminada.
