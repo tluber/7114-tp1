@@ -13,7 +13,7 @@ private val results = mutableListOf<Pair<Int, Int>>()
 private val washTimes = mutableListOf<Int>()
 
 private fun parseFile() {
-    val fileRoute = "src/main/resources/problem_2"
+    val fileRoute = "src/main/resources/problem_3"
     val lines: List<String> = File(fileRoute).readLines()
 
     val garmentIncompatibilities = lines.filter { line -> line.startsWith('e') }.map { line -> line.split(" ") }
