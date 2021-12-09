@@ -1,7 +1,29 @@
 # Ideas de resolución
+    Seguir los pasos sugeridos en el enunciado y utilizar las soluciones de las entregas pasadas para ver como afecta
+    al programa.
 
+# Comentarios por pasos
 
-# Comentarios por commit
+    1) Ejecute el codigo sin cambios y vi que no terminaba mas. Tiene sentido que tarde una eternidad ya que se estaba
+    asignando una prenda por lavado.
+
+    2) Corri el codigo con lo entregado para la entrega 2 del tp y obtuve un puntaje de 108. Este puntaje obviamente
+    esta lejos del optimo (91), con el agregado de que mi solucion para la segunda entrega no fue buena. Harcodie a lo
+    bruto el output obtenido dentro de la funcion buscarSolucionInicial.
+
+    3) Modifique el valor de la variable maxColor con un valor de 7 (cantidad de lavados).
+
+    4) Corri el codigo sin la restriccion para ver que pasaba y como se demoraba mucho, corte la ejecucion. Luego
+    agregue la restriccion para eliminar la simetria y el programa encontro el optimo en 1 minuto aproximadamente.
+    Finalmente agregue unas lineas de codigo para que se impriman los resultados en un txt.
 
 
 # Comentarios finales
+
+    A traves de las sucesivas entregas se puede experimentar como se deben adaptar las soluciones a los distintos tipos
+    de problemas. Para la primer entrega con un poco de ordenamiento alcanzo, ya que el set de datos era chico. Ya para
+    la segunda entrega, la solucion de la primera no alcanzaba debido a que el set de datos era enorme y habia que
+    utilizar otra estrategia. Entiendo que para esa segunda entrega, utilizando grafos el problema se podia resolver
+    facilmente. Finalmente para la tercer entrega, con la ayuda de CPLEX y el algoritmo de branch and cut, se logro
+    obtener el optimo con garantias. Fue de gran ayuda tambien, tener una semi solucion utilizando el codigo de las
+    entregas anteriores para reducir significativamente el tiempo de ejecucion del programa.
